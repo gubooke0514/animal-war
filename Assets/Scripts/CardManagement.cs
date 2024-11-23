@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CardManagement : MonoBehaviour
 {
-    
+    GameObject cardBoard;
 
     void Start()
     {
-        
+        cardBoard = GameObject.Find("CardBoard");
     }
 
     // Update is called once per frame
@@ -22,8 +22,9 @@ public class CardManagement : MonoBehaviour
         {
             Debug.Log("Ä«µå Á¢ÃË");
             other.transform.position = this.transform.position;
-            other.transform.rotation = Quaternion.identity;
-            other.transform.SetParent(this.transform);
+            other.transform.rotation = this.transform.rotation;
+            //other.transform.localScale = 
+            other.transform.SetParent(cardBoard.transform);
         }
     }
 }

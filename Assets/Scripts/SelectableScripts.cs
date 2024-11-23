@@ -37,10 +37,8 @@ public class SelectableScripts : MonoBehaviour
             Debug.Log("버튼 눌림");
             cardGrab = false;
         }
-        else if (OVRInput.GetUp(selectButton) && !cardGrab)
-        {
-            card.transform.SetParent(null);
-        }
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -57,6 +55,19 @@ public class SelectableScripts : MonoBehaviour
             cardGrab = true;
         }
     }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "dummy")
+        {
+            Debug.Log("더미 탈출");
+            dummyGrab = false;
 
-   
+        }
+        if (other.tag == "card")
+        {
+            card = null;
+            cardGrab = false;
+        }
+    }
+
 }

@@ -7,13 +7,18 @@ public class SelectableScripts : MonoBehaviour
     public OVRInput.RawButton selectButton;
 
     bool dummyGrab;
-    bool cardGrab;
+    public bool cardGrab;
+    public bool putCard;
     GameObject dummy;
-    GameObject card;
+    public GameObject card;
+
+    public bool haveCard; // 다른 스크립트에서 관리 해줘야 함
     void Start()
     {
         dummyGrab = false;
         cardGrab = false;
+        putCard = false;
+        haveCard = false;
         dummy = GameObject.Find("dummy");
     }
 
@@ -35,7 +40,16 @@ public class SelectableScripts : MonoBehaviour
         {
             card.transform.SetParent(this.transform);
             Debug.Log("버튼 눌림");
-            cardGrab = false;
+            haveCard = true;
+            //cardGrab = false;
+        }
+        else if (OVRInput.GetUp(selectButton) && cardGrab)
+        {
+            putCard = true;
+            
+
+            
+
         }
 
 
@@ -49,6 +63,16 @@ public class SelectableScripts : MonoBehaviour
             dummyGrab = true;
             
         }
+        if(other.tag == "card" && !haveCard)
+        {
+            card = other.gameObject;
+            cardGrab = true;
+            
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
         if(other.tag == "card")
         {
             card = other.gameObject;
@@ -65,8 +89,7 @@ public class SelectableScripts : MonoBehaviour
         }
         if (other.tag == "card")
         {
-            card = null;
-            cardGrab = false;
+
         }
     }
 

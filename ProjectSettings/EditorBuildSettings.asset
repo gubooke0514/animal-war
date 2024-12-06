@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PlayBoard.unity
+    guid: 9eef553d46ca98d4ebc0cb34ba90bc5f
+  - enabled: 1
+    path: Assets/Scenes/stage1Fight.unity
+    guid: 628fba301a978194bb89f027680368f8
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9698a255cc08ec142881dcdd512320dc, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f789bb15eb0bf9f4abaf9dba935a52df, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c7907f88aa89d3845ac2bb1e72a5cdd4, type: 2}

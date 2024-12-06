@@ -14,7 +14,7 @@ public class SelectableScripts : MonoBehaviour
 
     public bool haveCard; // 다른 스크립트에서 관리 해줘야 함
 
-    public bool itemCardGrab = false;
+
     void Start()
     {
         dummyGrab = false;
@@ -71,12 +71,7 @@ public class SelectableScripts : MonoBehaviour
             cardGrab = true;
             
         }
-        if( other.tag == "itemCard")
-        {
-            card = other.gameObject;
-            itemCardGrab = true;
 
-        }
     }
 
     public void OnTriggerStay(Collider other)
@@ -86,11 +81,7 @@ public class SelectableScripts : MonoBehaviour
             card = other.gameObject;
             cardGrab = true;
         }
-        if(other.tag == "itemCArd")
-        {
-            card = other.gameObject;
-            itemCardGrab = true;
-        }
+
     }
     public void OnTriggerExit(Collider other)
     {

@@ -11,6 +11,8 @@ public class InventoryManagement : MonoBehaviour
     public CardManagement block4;
     public CardManagement block5;
     public CardManagement block6;
+    public CardManagement block7;
+    public CardManagement block8;
 
     public GameObject co1;
     public GameObject co2;
@@ -18,6 +20,8 @@ public class InventoryManagement : MonoBehaviour
     public GameObject co4;
     public GameObject co5;
     public GameObject co6;
+    public GameObject co7;
+    public GameObject co8;
 
     public SelectableScripts SelectableScripts;
     void Start()
@@ -30,6 +34,8 @@ public class InventoryManagement : MonoBehaviour
         block4 = GameObject.Find("block4").GetComponent<CardManagement>();
         block5 = GameObject.Find("block5").GetComponent<CardManagement>();
         block6 = GameObject.Find("block6").GetComponent<CardManagement>();
+        block7 = GameObject.Find("block7").GetComponent<CardManagement>();
+        block8 = GameObject.Find("block8").GetComponent<CardManagement>();
 
     }
 
@@ -42,6 +48,8 @@ public class InventoryManagement : MonoBehaviour
         co4 = GameObject.Find("block4");
         co5 = GameObject.Find("block5");
         co6 = GameObject.Find("block6");
+        co7 = GameObject.Find("block7");
+        co6 = GameObject.Find("block7");
 
         if (block1.haveCard)
         {
@@ -116,6 +124,30 @@ public class InventoryManagement : MonoBehaviour
                 co6.GetComponent<BoxCollider>().enabled = true;
                 block6.unitCard = null;
                 block6.haveCard = false;
+            }
+        }
+
+        if (block7.haveCard)
+        {
+            co7.GetComponent<BoxCollider>().enabled = false;
+
+            if (SelectableScripts.card == block7.unitCard)
+            {
+                co7.GetComponent<BoxCollider>().enabled = true;
+                block7.unitCard = null;
+                block7.haveCard = false;
+            }
+        }
+
+        if (block8.haveCard)
+        {
+            co8.GetComponent<BoxCollider>().enabled = false;
+
+            if (SelectableScripts.card == block8.unitCard)
+            {
+                co8.GetComponent<BoxCollider>().enabled = true;
+                block8.unitCard = null;
+                block8.haveCard = false;
             }
         }
     }

@@ -43,12 +43,11 @@ public class Deer : MonoBehaviour
     void Update()
     {
         FindClosestTarget(); // 가장 가까운 적을 찾음
-
+        LookAtTarget();
         // 목표가 존재하고 사거리 밖에 있으면 목표 쪽으로 이동
         if (target != null && !IsTargetInRange())
         {
             MoveTowardsTarget();
-            LookAtTarget();
         }
         // 사거리 내에 있고 쿨타임이 지난 후 공격 시도
         else if (target != null && Time.time > lastAttackTime + attackCooldown && IsTargetInRange())
@@ -60,7 +59,11 @@ public class Deer : MonoBehaviour
 
     void LookAtTarget()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            animator.SetTrigger("Spin");
+            return; // 타겟이 없으면 함수 종료
+        }
         Vector3 direction = (target.position - transform.position).normalized; // 목표를 향하는 방향 계산
         Quaternion lookRotation = Quaternion.LookRotation(direction); // 목표 방향으로 정확히 회전 설정
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * 200f); // 빠르고 정확하게 회전
@@ -89,6 +92,15 @@ public class Deer : MonoBehaviour
             {
                 human.TakeDamage(attackDamage);
                 Debug.Log("사슴이 인간에게 " + attackDamage + "의 데미지를 입혔습니다.");
+            }
+        }
+        if (target != null)
+        {
+            RangedHuman human = target.GetComponent<RangedHuman>();
+            if (human != null)
+            {
+                human.TakeDamage(attackDamage);
+                Debug.Log("쥐가 인간에게 " + attackDamage + "의 데미지를 입혔습니다.");
             }
         }
     }

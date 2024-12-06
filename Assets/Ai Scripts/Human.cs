@@ -18,7 +18,7 @@ public class Human : MonoBehaviour
     public float attackRange = 2f; // 공격 사정거리
     public float attackCooldown = 1.5f; // 공격 쿨타임
     private float lastAttackTime = 0f; // 마지막으로 공격한 시간 기록
-
+    private bool isHit = false; // Hit 애니메이션 중인지 여부
     void Start()
     {
         currentHP = maxHP; // 시작할 때 현재 HP를 최대 HP로 설정
@@ -36,6 +36,7 @@ public class Human : MonoBehaviour
         // 목표가 존재하고 사거리 내에 있다면 공격 실행
         if (target != null)
         {
+            if (isHit) return; // Hit 애니메이션 중이라면 업데이트 중지
             LookAtTarget();
             float distanceToTarget = Vector3.Distance(transform.position, target.position);
             if (distanceToTarget > attackRange)
@@ -148,6 +149,32 @@ public class Human : MonoBehaviour
         {
             Die(); // HP가 0 이하가 되면 사망 처리
         }
+    }
+    public void TriggerHitAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Hit"); // Hit 애니메이션 트리거 실행
+            Debug.Log("휴먼 캐릭터가 먹물에 맞아 Hit 애니메이션을 실행합니다.");
+            StartCoroutine(StunAndStopNav(1.5f));
+        }
+    }
+    // 스턴 상태에서 NavMeshAgent를 멈추는 코루틴 함수
+    private IEnumerator StunAndStopNav(float duration)
+    {
+        isHit = true;
+        if (navAgent != null)
+        {
+            navAgent.isStopped = true; // NavMeshAgent 멈춤
+            navAgent.velocity = Vector3.zero; // NavMeshAgent의 속도를 0으로 설정하여 완전히 멈춤
+        }
+        yield return new WaitForSeconds(duration); // 스턴 지속 시간 대기
+        if (navAgent != null)
+        {
+            navAgent.isStopped = false; // NavMeshAgent 재개
+        }
+        isHit = false;
+        Debug.Log("휴먼 캐릭터가 스턴에서 회복되었습니다.");
     }
 
     // 사망 처리 함수

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Playables;
 
 public class Rat : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Rat : MonoBehaviour
 
     public GameObject atkCollider; // 공격용 콜라이더 오브젝트
 
+    public PlayableDirector board2;
+
+    bool endGame = false;
+    bool loop = true;
     public void EnableAttackCollider()
     {
         atkCollider.SetActive(true); // 공격용 콜라이더 활성화
@@ -41,12 +46,11 @@ public class Rat : MonoBehaviour
     void Update()
     {
         FindClosestTarget(); // 가장 가까운 적을 찾음
-
+        LookAtTarget();
         // 목표가 존재하고 사거리 밖에 있으면 목표 쪽으로 이동
         if (target != null && !IsTargetInRange())
         {
             MoveTowardsTarget();
-            LookAtTarget();
         }
         // 사거리 내에 있고 쿨타임이 지난 후 공격 시도
         else if (target != null && Time.time > lastAttackTime + attackCooldown && IsTargetInRange())
@@ -54,10 +58,24 @@ public class Rat : MonoBehaviour
             Attack();
             lastAttackTime = Time.time; // 마지막 공격 시간 업데이트
         }
-    }
+
+        if (endGame && loop)
+        {
+            board2.Play();
+            endGame = false;
+            loop = false;
+        }
+        }
     void LookAtTarget()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            animator.SetTrigger("Spin");
+            
+            endGame = true;
+            
+            return; // 타겟이 없으면 함수 종료
+        }
         Vector3 direction = (target.position - transform.position).normalized; // 목표를 향하는 방향 계산
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z)); // 목표 방향으로 회전 설정 (y축 회전만 적용)
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // 부드럽게 회전
@@ -80,6 +98,15 @@ public class Rat : MonoBehaviour
         if (target != null)
         {
             Human human = target.GetComponent<Human>();
+            if (human != null)
+            {
+                human.TakeDamage(attackDamage);
+                Debug.Log("쥐가 인간에게 " + attackDamage + "의 데미지를 입혔습니다.");
+            }
+        }
+        if (target != null)
+        {
+            RangedHuman human = target.GetComponent<RangedHuman>();
             if (human != null)
             {
                 human.TakeDamage(attackDamage);

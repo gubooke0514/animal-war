@@ -108,7 +108,15 @@ public class RangedHuman : MonoBehaviour
             Die();
         }
     }
-
+    public void TriggerHitAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Hit"); // Hit 애니메이션 트리거 실행
+            Debug.Log("휴먼 캐릭터가 먹물에 맞아 Hit 애니메이션을 실행합니다.");
+            StopAllCoroutines(); // 이전에 실행된 코루틴을 멈춤
+        }
+    }
     void Die()
     {
         Debug.Log("원거리 휴먼이 쓰러졌습니다!");

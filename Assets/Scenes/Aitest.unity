@@ -20771,15 +20771,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490740829844643661, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301638594942910714, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5995752360990693686, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

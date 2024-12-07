@@ -22,10 +22,11 @@ public class Monkey : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentHP = maxHP;
         healthBar.SetMaxHealth(maxHP);
         Agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        
     }
 
     void Update()

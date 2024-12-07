@@ -21,4 +21,9 @@ public class Stage2FightScene : MonoBehaviour
     {
         SceneManager.LoadScene("stage2Fight");
     }
+
+    public void Stage3Fight()
+    {
+        SceneManager.LoadScene("stage3Fight");
+    }
 }

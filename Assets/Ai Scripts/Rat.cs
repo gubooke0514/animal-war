@@ -20,10 +20,10 @@ public class Rat : MonoBehaviour
 
     public GameObject atkCollider; // 공격용 콜라이더 오브젝트
 
-    public PlayableDirector board2;
 
-    bool endGame = false;
-    bool loop = true;
+
+    public bool endGame = false;
+
     public void EnableAttackCollider()
     {
         atkCollider.SetActive(true); // 공격용 콜라이더 활성화
@@ -59,12 +59,7 @@ public class Rat : MonoBehaviour
             lastAttackTime = Time.time; // 마지막 공격 시간 업데이트
         }
 
-        if (endGame && loop)
-        {
-            board2.Play();
-            endGame = false;
-            loop = false;
-        }
+
         }
     void LookAtTarget()
     {

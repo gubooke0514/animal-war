@@ -31192,12 +31192,16 @@ MonoBehaviour:
   block4: {fileID: 29428006}
   block5: {fileID: 1480832038}
   block6: {fileID: 585350990}
+  block7: {fileID: 0}
+  block8: {fileID: 0}
   co1: {fileID: 2055715724}
   co2: {fileID: 1542200147}
   co3: {fileID: 574371751}
   co4: {fileID: 29428004}
   co5: {fileID: 1480832036}
   co6: {fileID: 585350988}
+  co7: {fileID: 0}
+  co8: {fileID: 0}
   SelectableScripts: {fileID: 792593388}
 --- !u!4 &1271210751
 Transform:
@@ -39336,7 +39340,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 42058fbd632ad664c9da86a512419194, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 2f0c8f158040503418c0af54954e3667, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1613078960
 Transform:

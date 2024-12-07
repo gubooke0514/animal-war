@@ -20,12 +20,15 @@ public class Monkey : MonoBehaviour
     private Animator animator; // Animator 컴포넌트 참조
     private Transform target; // 공격할 목표
 
+    public AudioSource AudioSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         currentHP = maxHP;
         healthBar.SetMaxHealth(maxHP);
         Agent = GetComponent<NavMeshAgent>();
+
         
     }
 
@@ -70,6 +73,7 @@ public class Monkey : MonoBehaviour
         {
             rb.velocity = throwPoint.forward * bananaSpeed; // 바나나를 앞으로 날림
             rb.AddTorque(transform.right * bananaSpinSpeed); // 바나나를 빙글빙글 돌게 함
+            AudioSource.Play();
         }
         animator.SetTrigger("Clicked"); // 공격 애니메이션 실행
     }

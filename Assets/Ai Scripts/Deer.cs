@@ -19,6 +19,8 @@ public class Deer : MonoBehaviour
 
     public GameObject atkCollider1; // 공격용 콜라이더 오브젝트
 
+    public AudioSource AudioSource;
+
     // 공격 애니메이션 중 콜라이더 활성화 (애니메이션 이벤트로 호출)
     public void EnableAttackCollider()
     {
@@ -84,6 +86,7 @@ public class Deer : MonoBehaviour
     {
         LookAtTarget();
         animator.SetTrigger("Attack"); // 공격 애니메이션 실행
+        AudioSource.Play();
         Debug.Log("사슴이 공격을 시도합니다!");
         if (target != null)
         {

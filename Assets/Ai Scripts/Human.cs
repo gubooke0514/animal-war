@@ -19,12 +19,15 @@ public class Human : MonoBehaviour
     public float attackCooldown = 1.5f; // 공격 쿨타임
     private float lastAttackTime = 0f; // 마지막으로 공격한 시간 기록
     private bool isHit = false; // Hit 애니메이션 중인지 여부
+
+    public AudioSource AudioSource;
     void Start()
     {
         currentHP = maxHP; // 시작할 때 현재 HP를 최대 HP로 설정
         healthBar.SetMaxHealth(maxHP);
         navAgent = GetComponent<NavMeshAgent>(); // NavMeshAgent 컴포넌트 가져오기
         animator = GetComponent<Animator>(); // Animator 컴포넌트 가져오기
+        AudioSource = GetComponent<AudioSource>();
         axeCollider = axe.GetComponent<Collider>(); // 도끼의 콜라이더 가져오기
         axeCollider.enabled = false; // 도끼 콜라이더 초기에는 비활성화
     }
@@ -70,6 +73,7 @@ public class Human : MonoBehaviour
         navAgent.ResetPath(); // 공격 중에는 이동 멈춤
         animator.SetBool("Walk", false); // 걷기 애니메이션 중지
         animator.SetTrigger("Attack"); // 공격 애니메이션 실행
+        AudioSource.Play();
     }
 
     // 공격 애니메이션 중 도끼 콜라이더 활성화 (애니메이션 이벤트로 호출)

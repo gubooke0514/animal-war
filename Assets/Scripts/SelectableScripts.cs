@@ -14,6 +14,8 @@ public class SelectableScripts : MonoBehaviour
 
     public bool haveCard; // 다른 스크립트에서 관리 해줘야 함
 
+    public AudioSource cardAudio;
+
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class SelectableScripts : MonoBehaviour
         putCard = false;
         haveCard = false;
         dummy = GameObject.Find("dummy");
+
+        cardAudio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,26 +35,30 @@ public class SelectableScripts : MonoBehaviour
         {
             dummy.transform.SetParent(this.transform);
             Debug.Log("버튼 눌림");
+            
             dummyGrab = false;
         }
         else if (OVRInput.GetUp(selectButton) && !dummyGrab)
         {
             dummy.transform.SetParent(null);
+            
         }
 
         if (OVRInput.GetDown(selectButton) && cardGrab)
         {
             card.transform.SetParent(this.transform);
             Debug.Log("버튼 눌림");
+            cardAudio.Play();
             haveCard = true;
             //cardGrab = false;
         }
         else if (OVRInput.GetUp(selectButton) && cardGrab)
         {
             putCard = true;
-            
+            cardAudio.Play();
 
-            
+
+
 
         }
 

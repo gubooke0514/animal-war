@@ -20,6 +20,8 @@ public class Rat : MonoBehaviour
     public GameObject atkCollider; // 공격용 콜라이더 오브젝트
 
     public bool endGame;
+
+    public AudioSource AudioSource;
     public void EnableAttackCollider()
     {
         atkCollider.SetActive(true); // 공격용 콜라이더 활성화
@@ -34,7 +36,9 @@ public class Rat : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>(); // NavMeshAgent 컴포넌트 가져오기
         animator = GetComponent<Animator>(); // Animator 컴포넌트 가져오기
+        AudioSource = GetComponent<AudioSource>();
         healthBar.SetMaxHealth(maxHP);
+
         currentHP = maxHP; // 시작할 때 현재 HP를 최대 HP로 설정
         atkCollider.SetActive(false); // 공격용 콜라이더는 기본적으로 비활성화
     }
@@ -81,6 +85,7 @@ public class Rat : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack"); // 공격 애니메이션 실행
+        AudioSource.Play();
         Debug.Log("쥐가 공격을 시도합니다!");
         if (target != null)
         {

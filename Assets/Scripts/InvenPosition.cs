@@ -11,10 +11,12 @@ public class InvenPosition : MonoBehaviour
     public OVRInput.RawButton selectButton;
     public GameObject CardBlock;
     public float CloseSpeed;
+
+    public AudioSource AudioSource;
     int count = 0;
     void Start()
     {
-        
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,12 +25,13 @@ public class InvenPosition : MonoBehaviour
         if (Open)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1f, 1f, 1f), Time.deltaTime * CloseSpeed);
-
+            AudioSource.Play();
             StartCoroutine(EnableCard());
         }
         else
         {
             CardBlock.SetActive(false);
+            AudioSource.Play();
             transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0.3f, 0.3f, 0.3f), Time.deltaTime * CloseSpeed);
             
         }

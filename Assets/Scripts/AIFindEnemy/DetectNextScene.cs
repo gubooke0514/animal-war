@@ -9,6 +9,7 @@ public class DetectNextScene : MonoBehaviour
 
     public Rat Rat;
     public PlayableDirector PlayableDirector;
+    public AudioSource AudioSource;
     bool loop = true;
     void Start()
     {
@@ -22,6 +23,7 @@ public class DetectNextScene : MonoBehaviour
         {
             PlayableDirector.Play();
             loop = false;
+            AudioSource.Stop();
         }
     }
 }

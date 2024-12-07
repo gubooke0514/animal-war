@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Playables;
 
 public class Rat : MonoBehaviour
 {
@@ -20,10 +19,7 @@ public class Rat : MonoBehaviour
 
     public GameObject atkCollider; // 공격용 콜라이더 오브젝트
 
-
-
-    public bool endGame = false;
-
+    public bool endGame;
     public void EnableAttackCollider()
     {
         atkCollider.SetActive(true); // 공격용 콜라이더 활성화
@@ -58,17 +54,13 @@ public class Rat : MonoBehaviour
             Attack();
             lastAttackTime = Time.time; // 마지막 공격 시간 업데이트
         }
-
-
-        }
+    }
     void LookAtTarget()
     {
         if (target == null)
         {
             animator.SetTrigger("Spin");
-            
             endGame = true;
-            
             return; // 타겟이 없으면 함수 종료
         }
         Vector3 direction = (target.position - transform.position).normalized; // 목표를 향하는 방향 계산
@@ -158,7 +150,12 @@ public class Rat : MonoBehaviour
             Die(); // HP가 0 이하가 되면 사망 처리
         }
     }
-
+    public void RestoreHealth(int amount)
+    {
+        currentHP += amount; // 체력 증가
+        currentHP = Mathf.Min(currentHP, maxHP); // 최대 체력을 초과하지 않도록 제한
+        healthBar.SetHealth(currentHP);
+    }
     // 사망 처리 함수
     void Die()
     {

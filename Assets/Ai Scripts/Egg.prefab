@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRadius: 5
   explosionDamage: 50
-  explosionDelay: 2
+  explosionDelay: 3
   fireExplosionPrefab: {fileID: 1546897667432260974, guid: 9e8fbbdbe7487924fb7c07a7087dfc20, type: 3}
 --- !u!54 &-6715498185417781698
 Rigidbody:

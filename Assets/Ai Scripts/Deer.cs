@@ -154,7 +154,11 @@ public class Deer : MonoBehaviour
             Die(); // HP가 0 이하가 되면 사망 처리
         }
     }
-
+    public void RestoreHealth(int amount)
+    {
+        currentHP += amount; // 체력 증가
+        currentHP = Mathf.Min(currentHP, maxHP); // 최대 체력을 초과하지 않도록 제한
+    }
     // 사망 처리 함수
     void Die()
     {

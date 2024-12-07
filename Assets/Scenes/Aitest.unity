@@ -675,13 +675,6 @@ MonoBehaviour:
     weight: 1
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
-  _joints:
-  - handJointId: 5
-    weight: 1
-  - handJointId: 10
-    weight: 1
-  _posOffset: {x: 0, y: 0, z: 0}
-  _rotOffset: {x: 0, y: 0, z: 0, w: 1}
   _mirrorOffsetsForLeftHand: 1
 --- !u!1 &78168444
 GameObject:
@@ -2145,12 +2138,7 @@ MonoBehaviour:
   _hand: {fileID: 1092504328}
   _offset: {x: -0.12, y: -0.05, z: 0}
   _rotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
-  _posOffset: {x: 0, y: -0.05, z: 0.12}
-  _rotOffset: {x: 0, y: 0.000000029802326, z: 0, w: 1}
   _mirrorOffsetsForLeftHand: 1
-  _freezeRotationX: 0
-  _freezeRotationY: 0
-  _freezeRotationZ: 0
 --- !u!1 &201267106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56a590bc345b42b367a1c73088cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _active: 0
 --- !u!4 &220961854
 Transform:
   m_ObjectHideFlags: 0
@@ -2696,12 +2683,7 @@ MonoBehaviour:
   _hand: {fileID: 1664002502}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _posOffset: {x: -0.02, y: -0.075, z: 0.11}
-  _rotOffset: {x: 0.084257655, y: 0.04868803, z: -0.064553, w: 0.99315816}
   _mirrorOffsetsForLeftHand: 1
-  _freezeRotationX: 0
-  _freezeRotationY: 0
-  _freezeRotationZ: 0
 --- !u!114 &224455940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +3985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshType: 5
+  _meshType: 1
 --- !u!114 &345887754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4034,7 +4016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonType: 5
+  _skeletonType: 1
   _updateRootPose: 0
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
@@ -4170,28 +4152,6 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 358304608}
-        m_TargetAssemblyTypeName: Oculus.Interaction.Locomotion.TeleportArcGravity,
-          Oculus.Interaction
-        m_MethodName: UpdateArcParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &358304608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4316,9 +4276,9 @@ MonoBehaviour:
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
   _selector: {fileID: 898727710}
+  _hmd: {fileID: 358304606}
   _teleportArc: {fileID: 358304608}
   _equalDistanceThreshold: 0.1
-  _hmd: {fileID: 358304606}
 --- !u!114 &358304610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4852,12 +4812,7 @@ MonoBehaviour:
   _hand: {fileID: 83862742}
   _offset: {x: -0.11, y: -0.075, z: -0.02}
   _rotation: {x: 0.105225, y: -0.6678412, z: 0.013933297, w: 0.7366965}
-  _posOffset: {x: -0.02, y: -0.075, z: 0.11}
-  _rotOffset: {x: 0.084257655, y: 0.04868803, z: -0.064553, w: 0.99315816}
   _mirrorOffsetsForLeftHand: 1
-  _freezeRotationX: 0
-  _freezeRotationY: 0
-  _freezeRotationZ: 0
 --- !u!114 &416816138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5897,15 +5852,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _whenUnselect:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &532803288
@@ -7614,61 +7560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibleDuringSelect: 1
   _interactor: {fileID: 1092504327}
-  _targetRenderer: {fileID: 1037483328}
+  _validTargetRenderer: {fileID: 0}
   _invalidTargetRenderer: {fileID: 0}
-  _progressState: {fileID: 1617796150}
+  _progress: {fileID: 0}
   _highlightState: {fileID: 2120520622}
-  _acceptColor: {r: 1, g: 1, b: 1, a: 1}
-  _rejectColor: {r: 1, g: 0.12156863, b: 0.38431373, a: 1}
-  _acceptAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -2.9086974
-      outSlope: -2.9086974
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.014915253
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _rejectAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.2
-      inSlope: 0.64085287
-      outSlope: 0.64085287
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.025084853
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _transitionSpeed: 8
 --- !u!1 &733554941
 GameObject:
   m_ObjectHideFlags: 0
@@ -8642,12 +8537,7 @@ MonoBehaviour:
   _hand: {fileID: 358304610}
   _offset: {x: -0.12, y: -0.05, z: 0}
   _rotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
-  _posOffset: {x: 0, y: -0.05, z: 0.12}
-  _rotOffset: {x: 0, y: 0.000000029802326, z: 0, w: 1}
   _mirrorOffsetsForLeftHand: 1
-  _freezeRotationX: 0
-  _freezeRotationY: 0
-  _freezeRotationZ: 0
 --- !u!1 &823519676
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,7 +8915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshType: 4
+  _meshType: 0
 --- !u!114 &882404816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9056,7 +8946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonType: 4
+  _skeletonType: 0
   _updateRootPose: 0
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
@@ -10229,79 +10119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibleDuringSelect: 1
   _interactor: {fileID: 1875774952}
-  _targetRenderer: {fileID: 1607965088}
+  _validTargetRenderer: {fileID: 0}
   _invalidTargetRenderer: {fileID: 0}
-  _progressState: {fileID: 0}
+  _progress: {fileID: 0}
   _highlightState: {fileID: 0}
-  _acceptColor: {r: 1, g: 1, b: 1, a: 1}
-  _rejectColor: {r: 1, g: 0.12156863, b: 0.38431373, a: 1}
-  _acceptAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -6.6666665
-      outSlope: -6.6666665
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.15
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _rejectAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.2428728
-      outSlope: 1.2428728
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.035254233
-    - serializedVersion: 3
-      time: 0.25
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.75
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _transitionSpeed: 8
 --- !u!1 &1060682918
 GameObject:
   m_ObjectHideFlags: 0
@@ -10492,28 +10313,6 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1092504326}
-        m_TargetAssemblyTypeName: Oculus.Interaction.Locomotion.TeleportArcGravity,
-          Oculus.Interaction
-        m_MethodName: UpdateArcParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1092504326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10638,9 +10437,9 @@ MonoBehaviour:
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
   _selector: {fileID: 2120520622}
+  _hmd: {fileID: 1092504324}
   _teleportArc: {fileID: 1092504326}
   _equalDistanceThreshold: 0.1
-  _hmd: {fileID: 1092504324}
 --- !u!114 &1092504328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12382,7 +12181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56a590bc345b42b367a1c73088cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _active: 0
 --- !u!4 &1301387571
 Transform:
   m_ObjectHideFlags: 0
@@ -12495,7 +12293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56a590bc345b42b367a1c73088cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _active: 0
 --- !u!4 &1316892930
 Transform:
   m_ObjectHideFlags: 0
@@ -14118,15 +13915,6 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1506476110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14334,10 +14122,26 @@ MonoBehaviour:
   _turner: {fileID: 1664002504}
   _broadcaster: {fileID: 1664002503}
   _lookAt: {fileID: 746753633}
-  _root: {fileID: 1511501592}
-  _visuals: {fileID: 1511501593}
   _progress: {fileID: 1511501596}
+  _root: {fileID: 1511501592}
+  _leftArrow: {fileID: 0}
+  _rightArrow: {fileID: 0}
+  _leftRail: {fileID: 0}
+  _rightRail: {fileID: 0}
+  _leftTrail: {fileID: 0}
+  _rightTrail: {fileID: 0}
+  _leftMaterialBlock: {fileID: 0}
+  _rightMaterialBlock: {fileID: 0}
   _verticalOffset: 0.03
+  _radius: 0.07
+  _margin: 2
+  _trailLength: 15
+  _maxAngle: 45
+  _railGap: 0.005
+  _squeezeLength: 5
+  _disabledColor: {r: 1, g: 1, b: 1, a: 0.2}
+  _enabledColor: {r: 1, g: 1, b: 1, a: 0.6}
+  _highligtedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1512465179
 GameObject:
   m_ObjectHideFlags: 0
@@ -14514,10 +14318,26 @@ MonoBehaviour:
   _turner: {fileID: 83862744}
   _broadcaster: {fileID: 83862743}
   _lookAt: {fileID: 1787497796}
-  _root: {fileID: 1512465180}
-  _visuals: {fileID: 1512465181}
   _progress: {fileID: 1512465184}
+  _root: {fileID: 1512465180}
+  _leftArrow: {fileID: 0}
+  _rightArrow: {fileID: 0}
+  _leftRail: {fileID: 0}
+  _rightRail: {fileID: 0}
+  _leftTrail: {fileID: 0}
+  _rightTrail: {fileID: 0}
+  _leftMaterialBlock: {fileID: 0}
+  _rightMaterialBlock: {fileID: 0}
   _verticalOffset: 0.03
+  _radius: 0.07
+  _margin: 2
+  _trailLength: 15
+  _maxAngle: 45
+  _railGap: 0.005
+  _squeezeLength: 5
+  _disabledColor: {r: 1, g: 1, b: 1, a: 0.2}
+  _enabledColor: {r: 1, g: 1, b: 1, a: 0.6}
+  _highligtedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1538365384
 GameObject:
   m_ObjectHideFlags: 0
@@ -14783,61 +14603,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibleDuringSelect: 1
   _interactor: {fileID: 358304609}
-  _targetRenderer: {fileID: 621821949}
+  _validTargetRenderer: {fileID: 0}
   _invalidTargetRenderer: {fileID: 0}
-  _progressState: {fileID: 1478576361}
+  _progress: {fileID: 0}
   _highlightState: {fileID: 898727710}
-  _acceptColor: {r: 1, g: 1, b: 1, a: 1}
-  _rejectColor: {r: 1, g: 0.12156863, b: 0.38431373, a: 1}
-  _acceptAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -2.9086974
-      outSlope: -2.9086974
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.014915253
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _rejectAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.2
-      inSlope: 0.64085287
-      outSlope: 0.64085287
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.025084853
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _transitionSpeed: 8
 --- !u!1 &1558793417
 GameObject:
   m_ObjectHideFlags: 0
@@ -14899,9 +14668,9 @@ MonoBehaviour:
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
   _selector: {fileID: 1637646770}
+  _hmd: {fileID: 1558793420}
   _teleportArc: {fileID: 1558793421}
   _equalDistanceThreshold: 0.1
-  _hmd: {fileID: 1558793420}
 --- !u!114 &1558793420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15050,28 +14819,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _whenUnselect:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1558793421}
-        m_TargetAssemblyTypeName: Oculus.Interaction.Locomotion.TeleportArcGravity,
-          Oculus.Interaction
-        m_MethodName: UpdateArcParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1558793425
@@ -15804,10 +15551,6 @@ MonoBehaviour:
   enableDynamicResolution: 1
   minDynamicResolutionScale: 1
   maxDynamicResolutionScale: 1
-  quest2MinDynamicResolutionScale: 1
-  quest2MaxDynamicResolutionScale: 1
-  quest3MinDynamicResolutionScale: 1
-  quest3MaxDynamicResolutionScale: 1
   minRenderScale: 0.7
   maxRenderScale: 1
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
@@ -15866,7 +15609,6 @@ MonoBehaviour:
   SimultaneousHandsAndControllersEnabled: 0
   _readOnlyWideMotionModeHandPosesEnabled: 0
   wideMotionModeHandPosesEnabled: 0
-  dynamicResolutionVersion: 1
 --- !u!114 &1637197974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17691,13 +17433,6 @@ MonoBehaviour:
     weight: 1
   _localPositionOffset: {x: 0, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
-  _joints:
-  - handJointId: 5
-    weight: 1
-  - handJointId: 10
-    weight: 1
-  _posOffset: {x: 0, y: 0, z: 0}
-  _rotOffset: {x: 0, y: 0, z: 0, w: 1}
   _mirrorOffsetsForLeftHand: 1
 --- !u!1 &1841584222
 GameObject:
@@ -17746,79 +17481,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibleDuringSelect: 1
   _interactor: {fileID: 1558793419}
-  _targetRenderer: {fileID: 225971622}
+  _validTargetRenderer: {fileID: 0}
   _invalidTargetRenderer: {fileID: 0}
-  _progressState: {fileID: 0}
+  _progress: {fileID: 0}
   _highlightState: {fileID: 0}
-  _acceptColor: {r: 1, g: 1, b: 1, a: 1}
-  _rejectColor: {r: 1, g: 0.12156863, b: 0.38431373, a: 1}
-  _acceptAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -6.6666665
-      outSlope: -6.6666665
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.15
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _rejectAnimation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.2428728
-      outSlope: 1.2428728
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.035254233
-    - serializedVersion: 3
-      time: 0.25
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.75
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _transitionSpeed: 8
 --- !u!1 &1848132270
 GameObject:
   m_ObjectHideFlags: 0
@@ -18103,9 +17769,9 @@ MonoBehaviour:
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
   _selector: {fileID: 1623091943}
+  _hmd: {fileID: 1875774953}
   _teleportArc: {fileID: 1875774954}
   _equalDistanceThreshold: 0.1
-  _hmd: {fileID: 1875774953}
 --- !u!114 &1875774953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18254,28 +17920,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _whenUnselect:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPreprocessed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1875774954}
-        m_TargetAssemblyTypeName: Oculus.Interaction.Locomotion.TeleportArcGravity,
-          Oculus.Interaction
-        m_MethodName: UpdateArcParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _whenProcessed:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenPostprocessed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1875774958
@@ -20324,7 +19968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56a590bc345b42b367a1c73088cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _active: 0
 --- !u!4 &2061486931
 Transform:
   m_ObjectHideFlags: 0
@@ -21361,15 +21004,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490740829844643661, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301638594942910714, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5995752360990693686, guid: 4e01c9d3b8fc76e43a56822da462a507, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

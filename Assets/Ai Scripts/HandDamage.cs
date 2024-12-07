@@ -6,6 +6,7 @@ public class HandDamage : MonoBehaviour
 {
 
     public int damage = 20;
+    public AudioSource damageSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class HandDamage : MonoBehaviour
             if (enemyHuman != null)
             {
                 enemyHuman.TakeDamage(damage); // 적에게 데미지 주기
+                damageSource.Play();
                 Debug.Log("적에게 " + damage + "의 데미지를 입혔습니다! (Human)");
                 return;
             }
@@ -22,6 +24,7 @@ public class HandDamage : MonoBehaviour
             var enemyRangedHuman = other.GetComponent<RangedHuman>();
             if (enemyRangedHuman != null)
             {
+                damageSource.Play();
                 enemyRangedHuman.TakeDamage(damage); // 적에게 데미지 주기
                 Debug.Log("적에게 " + damage + "의 데미지를 입혔습니다! (RangedHuman)");
                 return;

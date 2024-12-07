@@ -9,6 +9,8 @@ public class Squid : MonoBehaviour
     public float shootForce = 15f; // ¸Ô¹° ¹ß»ç Èû
     public OVRInput.RawButton RHandButton; 
 
+    public AudioSource AudioSource;
+
     private void Update()
     {
         if (OVRInput.GetDown(RHandButton))
@@ -25,6 +27,7 @@ public class Squid : MonoBehaviour
         if (rb != null)
         {
             rb.AddForce(shootPoint.forward * shootForce, ForceMode.Impulse);
+            AudioSource.Play();
         }
 
         Debug.Log("¸Ô¹°ÀÌ ¹ß»çµÇ¾ú½À´Ï´Ù!");

@@ -11,6 +11,8 @@ public class Mushroom : MonoBehaviour
     public float sinkYValue = -100f;
     private bool hasExploded = false; // 버섯이 이미 터졌는지 여부
 
+    public AudioSource explosionSound;
+
     private void OnTriggerEnter(Collider other)
     {
         // Enemy 태그를 가진 오브젝트가 버섯을 밟았을 때만 실행
@@ -29,6 +31,7 @@ public class Mushroom : MonoBehaviour
             ParticleSystem ps = explosionEffect.GetComponent<ParticleSystem>();
             if (ps != null)
             {
+                explosionSound.Play();
                 ps.Play(); // 폭발 파티클 재생
             }
             Destroy(explosionEffect, 2f); // 효과가 끝나면 삭제

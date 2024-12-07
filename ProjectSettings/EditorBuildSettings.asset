@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage2Fight.unity
     guid: 339991b8d7ee10f4fad16eda9e162f70
+  - enabled: 1
+    path: Assets/Scenes/PlayBoard3.unity
+    guid: 2c1006ee4acf08e42a3dbc537c312636
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f789bb15eb0bf9f4abaf9dba935a52df, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c7907f88aa89d3845ac2bb1e72a5cdd4, type: 2}

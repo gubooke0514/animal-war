@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -43,5 +42,10 @@ public class Stage1To2 : MonoBehaviour
     public void Stage1Goto2()
     {
         SceneManager.LoadScene("PlayBoard2");
+    }
+
+    public void Stage2Goto3()
+    {
+        SceneManager.LoadScene("PlayBoard3");
     }
 }

@@ -39829,7 +39829,7 @@ GameObject:
   - component: {fileID: 1645031994}
   - component: {fileID: 1645031998}
   m_Layer: 0
-  m_Name: block6 (1)
+  m_Name: block7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42749,7 +42749,7 @@ GameObject:
   - component: {fileID: 1779488790}
   - component: {fileID: 1779488794}
   m_Layer: 0
-  m_Name: block6 (2)
+  m_Name: block8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

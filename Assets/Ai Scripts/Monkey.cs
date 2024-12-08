@@ -22,6 +22,8 @@ public class Monkey : MonoBehaviour
 
     public AudioSource AudioSource;
 
+    public bool endGame;
+
     void Start()
     {
         animator = GetComponent<Animator>();

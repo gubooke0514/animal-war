@@ -4790,9 +4790,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 3
-  attackDamage: 5
+  attackDamage: 10
   attackCooldown: 1
-  maxHP: 100
+  maxHP: 400
   healthBar: {fileID: 1051686795}
   atkCollider: {fileID: 292591591}
   endGame: 0
@@ -4899,7 +4899,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.819239, y: -0.22223398, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1888589270}
   - {fileID: 1184669549}
@@ -13828,6 +13828,7 @@ MonoBehaviour:
   maxHP: 100
   healthBar: {fileID: 2131201601}
   AudioSource: {fileID: 328943872}
+  endGame: 0
 --- !u!95 &328943869
 Animator:
   serializedVersion: 5
@@ -40458,6 +40459,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdfaf5519699a14cba02c3070048fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &981788750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981788752}
+  - component: {fileID: 981788751}
+  m_Layer: 0
+  m_Name: TimeStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &981788751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981788750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30304b3ef0586e6499dfa685ed752aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopButton: 2
+--- !u!4 &981788752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981788750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3620035, y: -23.119333, z: 62.391678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982850277
 GameObject:
   m_ObjectHideFlags: 0
@@ -45040,7 +45086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7056456664014847399, guid: e597e8dda7d31d648b4f1cf9325091ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.39
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 7056456664014847399, guid: e597e8dda7d31d648b4f1cf9325091ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -51162,7 +51208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 300
   healthBar: {fileID: 1749736543}
   axe: {fileID: 868842050}
   attackRange: 2.3
@@ -66051,7 +66097,7 @@ GameObject:
   - component: {fileID: 1637197972}
   m_Layer: 0
   m_Name: CameraRig_Squid
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81108,7 +81154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 400
   healthBar: {fileID: 608468023}
   axe: {fileID: 1888727846}
   attackRange: 1.3
@@ -93171,3 +93217,4 @@ SceneRoots:
   - {fileID: 1115719207}
   - {fileID: 1213151366}
   - {fileID: 81902083}
+  - {fileID: 981788752}

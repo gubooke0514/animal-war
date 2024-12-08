@@ -4964,7 +4964,7 @@ MonoBehaviour:
   attackRange: 3
   attackDamage: 10
   attackCooldown: 1
-  maxHP: 200
+  maxHP: 400
   healthBar: {fileID: 1051686795}
   atkCollider: {fileID: 292591591}
   endGame: 0
@@ -11842,7 +11842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 400
   healthBar: {fileID: 1730809905}
   axe: {fileID: 23303199}
   attackRange: 1.3
@@ -14358,6 +14358,7 @@ MonoBehaviour:
   maxHP: 100
   healthBar: {fileID: 2131201601}
   AudioSource: {fileID: 328943872}
+  endGame: 0
 --- !u!95 &328943869
 Animator:
   serializedVersion: 5
@@ -16994,7 +16995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 300
   healthBar: {fileID: 1130755714}
   axe: {fileID: 559948190}
   attackRange: 2.3
@@ -33633,7 +33634,7 @@ MonoBehaviour:
   attackRange: 1
   attackDamage: 15
   attackCooldown: 1.2
-  maxHP: 60
+  maxHP: 150
   healthBar: {fileID: 1287858495}
   atkCollider1: {fileID: 875265092}
   AudioSource: {fileID: 804361410}
@@ -54022,7 +54023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 300
   healthBar: {fileID: 1749736543}
   axe: {fileID: 868842050}
   attackRange: 2.3
@@ -69044,7 +69045,7 @@ GameObject:
   - component: {fileID: 1637197972}
   m_Layer: 0
   m_Name: CameraRig_Chicken
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84237,7 +84238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a3838792c60f4e957af91d3eb84f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 400
   healthBar: {fileID: 608468023}
   axe: {fileID: 1888727846}
   attackRange: 1.3
@@ -87432,6 +87433,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 2061864316}
+--- !u!1 &2061872944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061872946}
+  - component: {fileID: 2061872945}
+  m_Layer: 0
+  m_Name: TimeStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2061872945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061872944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30304b3ef0586e6499dfa685ed752aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopButton: 2
+--- !u!4 &2061872946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061872944}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3620035, y: -23.119333, z: 62.391678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2062764657
 GameObject:
   m_ObjectHideFlags: 0
@@ -91201,13 +91247,13 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1637197976}
   - {fileID: 881091436}
+  - {fileID: 781161112}
+  - {fileID: 1256280046}
+  - {fileID: 1458406567}
+  - {fileID: 1284931165}
   - {fileID: 328943871}
   - {fileID: 130816075}
-  - {fileID: 781161112}
-  - {fileID: 1458406567}
   - {fileID: 804361409}
-  - {fileID: 1256280046}
-  - {fileID: 1284931165}
   - {fileID: 78168448}
   - {fileID: 1320278663}
   - {fileID: 295899735}
@@ -91218,3 +91264,4 @@ SceneRoots:
   - {fileID: 2020234431}
   - {fileID: 85793372}
   - {fileID: 1456456726}
+  - {fileID: 2061872946}

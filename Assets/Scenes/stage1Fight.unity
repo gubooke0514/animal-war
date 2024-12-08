@@ -42462,9 +42462,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1162325473664942560, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334291256757979708, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3263936340760370846, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264855528911831317, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346227825551412026, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5448438133025650069, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42510,6 +42526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat
       objectReference: {fileID: 0}
+    - target: {fileID: 8306319750391896961, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8759943362958912530, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
       propertyPath: maxHP
       value: 300
@@ -42522,7 +42542,8 @@ PrefabInstance:
       propertyPath: AudioSource
       value: 
       objectReference: {fileID: 1948497730}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8306319750391896961, guid: 8f4477f8931f4ce4c88bbdcbf7f6968c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
